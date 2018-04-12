@@ -42,10 +42,11 @@ Node* Sequence::get(int i)
 void Sequence::insert(int i, Node* element)
 {
     // TO - DO
-    for(int j=end;j>0;j--){
-        content[i] = content[i-1];
+    for(int j=end;j>i;j--){
+        content[j-1] = content[j];
     }    
     content[i]=element;
+    end++;
     quantity++;
 
 }
@@ -109,7 +110,6 @@ Node* Sequence::removeBegin()
 Node* Sequence::removeEnd()
 {
     // TO - DO
-    content[end] = nullptr;
 
     return nullptr;
 }
