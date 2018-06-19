@@ -98,7 +98,12 @@ bool HashTable::put(const string key, const string value)
 bool HashTable::remove(const string key)
 {
     // throw "NOT YET IMPLEMENTED";
-    this->data[index] = ENTRY_DELETED;
+    unsigned long k = this->preHash(key);
+    unsigned long k = hash(k);
+    for (int d = 0; d < this->getSize; d++)
+    {
+        
+    }
 
     if( entry != nullptr && entry != ENTRY_DELETED)
     return false; 
