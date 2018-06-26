@@ -4,6 +4,8 @@
 
 ```
 g++ -Wall -ansi -pedantic -std=c++11 -o hash main.cpp HashTable.h HashTable.cpp HashEntry.h TestTable.h TestTable.cpp  
+```
+```
 ./hash
 ```
 
