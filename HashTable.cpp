@@ -74,12 +74,18 @@ HashTable::~HashTable()
 string HashTable::get(const string key)
 {
     // throw "NOT YET IMPLEMENTED";
-    HashEntry<std::string, std::string> *entry = this->getValue(data);
-    if (entry->getKey() == key){
-        return entry;
-    }else{
-        return "";
+    for( int i = 0; i < this->getSize(); i++ )
+    {
+        HashEntry<string, string>* entry = this->data[i];
+        
+        if( entry == nullptr)
+        {
+            return "";
+        }else if( entry->getKey() == key ){
+            return entry->getValue();
+        }
     }
+        return "";
 }
 
 /**
@@ -97,16 +103,11 @@ bool HashTable::put(const string key, const string value)
  */
 bool HashTable::remove(const string key)
 {
-    // throw "NOT YET IMPLEMENTED";
-    unsigned long k = this->preHash(key);
-    unsigned long k = hash(k);
-    for (int d = 0; d < this->getSize; d++)
-    {
-        
-    }
+    throw "NOT YET IMPLEMENTED";
+    // unsigned long h = this->preHash(key);
+    // if (){
 
-    if( entry != nullptr && entry != ENTRY_DELETED)
-    return false; 
+    // }
 }
 
 /**
