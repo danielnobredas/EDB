@@ -94,7 +94,12 @@ string HashTable::get(const string key)
  */
 bool HashTable::put(const string key, const string value)
 {
-    throw "NOT YET IMPLEMENTED";
+    // throw "NOT YET IMPLEMENTED";
+    HashEntry<string, string>* entry = this->data[i];
+    
+        
+    
+    return true;
 }
 
 /**
@@ -104,10 +109,7 @@ bool HashTable::put(const string key, const string value)
 bool HashTable::remove(const string key)
 {
     throw "NOT YET IMPLEMENTED";
-    // unsigned long h = this->preHash(key);
-    // if (){
 
-    // }
 }
 
 /**
