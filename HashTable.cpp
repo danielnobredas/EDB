@@ -77,11 +77,7 @@ string HashTable::get(const string key)
     for( int i = 0; i < this->getSize(); i++ )
     {
         HashEntry<string, string>* entry = this->data[i];
-        
-        if( entry == nullptr)
-        {
-            return "";
-        }else if( entry->getKey() == key ){
+        if( entry->getKey() == key && entry != nullptr ){
             return entry->getValue();
         }
     }
@@ -95,11 +91,21 @@ string HashTable::get(const string key)
 bool HashTable::put(const string key, const string value)
 {
     // throw "NOT YET IMPLEMENTED";
-    HashEntry<string, string>* entry = this->data[i];
-    
-        
-    
-    return true;
+    for( int i = 0; i < this->getSize(); i++ ){
+        HashEntry<std::string, std::string> *entry = this->data[i];
+        if (entry != nullptr){
+            if( entry->getKey() == key ){
+                entry->setValue(value);
+                return true;
+            }else{
+                this->size=this->getSize()+1;
+                entry->setKey(key);
+                entry->setValue(value);
+                return true;
+            }
+        }
+    }    
+    return false;
 }
 
 /**
